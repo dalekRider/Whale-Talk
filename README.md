@@ -9,4 +9,5 @@ The original solution for Codecademy only declared variables, iterated through t
 
 resources:
 http://www.codecademy.com
+
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
