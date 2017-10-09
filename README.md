@@ -7,7 +7,6 @@ This project is a modified version of the whale translator project found on Code
 
 The original solution for Codecademy only declared variables, iterated through the arrays and then output to console. I have wrapped this within a function, changed the input variable to a prompt and then output the results using an alert. The prompt will eventually be changed to an input text field. I will add a button tied to the whaleTalk function and then the output will append an element on the page.
 
-resources:
-http://www.codecademy.com
-
+resources:<br>
+http://www.codecademy.com<br>
 https://developer.mozilla.org/en-US/docs/Web/JavaScript
