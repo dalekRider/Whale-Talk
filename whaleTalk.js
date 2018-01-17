@@ -1,5 +1,5 @@
 //let input = 'I\'m sorry Dave, I\'m afraid I can\'t do that';
-
+let transBtn = document.getElementById('translateBtn');
 
 const whaleTalk = function() {
   let input = prompt('Enter the text you want translated');
@@ -21,4 +21,9 @@ const whaleTalk = function() {
   alert(resultArray.join('').toUpperCase());
 };
 
-whaleTalk();
+let translate = function() {
+  whaleTalk();
+};
+
+
+transBtn.addEventListener('click', translate);
