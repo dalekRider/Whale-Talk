@@ -55,11 +55,15 @@ h1 {
   font-size: 1rem;
   border-radius: 3px;
   border: 0;
-  background-color: #b3d1ff;99c2ff
+  background-color: #b3d1ff;
   color: #fff;
+  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
+  transition-property: background-color, box-shadow;
+  transition: 125ms ease-in;
 }
 
 .btn:hover {
   background-color: #99c2ff;
   cursor: pointer;
+  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
 }
