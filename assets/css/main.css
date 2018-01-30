@@ -1,5 +1,14 @@
-*, *:before, *:after {
+
+html {
   box-sizing: border-box;
+  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
   margin: 0;
   padding: 0;
 }
@@ -7,10 +16,34 @@
 body {
   background: url(../img/underwater-bubbles.jpg) bottom fixed no-repeat;
   background-size: cover;
-  font-size: 16px;
   background-color: steelblue;
-  color: #fff;
-  font-family: 'Open Sans Condensed', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Amatic SC', Arial, sans-serif;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+h1 {
+  font-size: 3.25rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+}
+
+a:hover {
+  color: white;
 }
 
 main {
@@ -19,52 +52,150 @@ main {
   max-width: 1100px;
   margin: 2.5rem auto;
   min-height: 85vh;
-  border-radius: 5px;
+  border-radius: 15px;
+  padding: 2.5rem 2.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: 'Amatic SC', Arial, sans-serif;
-}
-
-h1 {
-  font-size: 3.25rem;
+.translator {
+  display: grid;
+  grid-template-areas: 
+    "header header header header"
+    "body body body aside";
+  grid-column-gap: 2.5rem;
 }
 
 .translator__header {
-  text-align: center;
+  grid-area: header;
+  justify-self: center;
   padding: 1.5rem 0;
 }
 
 .translator__body {
-  font-size: 1.15rem;
-  padding: 0 2.5rem;
-  line-height: 1.2;
-  width: 100%;
+  grid-area: body;
 }
 
 .translator__body p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
 }
 
-.btn {
-  display: block;
-  margin: 0 auto;
-  padding: .5rem 2.5rem;
-  font-family: 'Open Sans Condensed', sans-serif;
+.translator__form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 2.5rem;
+}
+
+.translator__results {
+  font-family: 'Amatic SC', Arial, sans-serif;
+  font-size: 2.5rem;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  min-height: 200px;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-all;
+  word-break: break-word;
+  -ms-hyphens: auto;
+  -moz-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+.translator__faq {
+  grid-area: aside;
+  margin-bottom: 2.5rem;
+}
+
+.translator__faq p {
+  margin-bottom: 1rem;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-gap: 3.5rem;
+  justify-self: center;
+  align-self: end;
+  font-size: 0.85rem;
   font-weight: bold;
-  font-size: 1rem;
-  border-radius: 3px;
-  border: 0;
-  background-color: #b3d1ff;
-  color: #fff;
-  box-shadow: 5px 5px 10px 1px rgba(0, 0, 0, 0.3);
-  transition-property: background-color, box-shadow;
-  transition: 125ms ease-in;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+/* Components */
+
+.btn {
+  border: none;
+  border-radius: 15px;
+  padding: 0.25rem 1.25rem;
+  font-family: 'Open Sans Condensed', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  background: #c7effb;
+  cursor: pointer;
+  box-shadow: 1px 1px 3px 1px rgba(0, 0, 0, 0.5);
   outline: none;
 }
 
 .btn:hover {
-  background-color: #99c2ff;
-  cursor: pointer;
-  box-shadow: 1px 1px 5px 1px rgba(0, 0, 0, 0.3);
+  background: #bed7e1;
+  box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+[name="trans-input"] {
+  border: none;
+  border-radius: 15px;
+  background: none;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+  padding: 0.25rem 1.25rem;
+  color: white;
+  font-family: 'Open Sans Condensed', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  width: 350px;
+}
+
+
+/* Media Queries */
+
+@media (max-width: 1180px) {
+  .translator {
+    grid-template-areas: 
+      "header header header header" 
+      "body body aside aside";
+  }
+}
+
+@media (max-width: 948px) {
+  .translator {
+    grid-template-areas: 
+      "header header header header" 
+      "body body body body"
+      "aside aside aside aside";
+  }
+}
+
+@media (max-width: 725px) {
+  .translator__form {
+    grid-template-columns: auto;
+  }
+  [name="trans-input"] {
+    width: 100%;
+  }
+  .translator__header {
+    text-align: center;
+    line-height: 1;
+  }
+  footer {
+    grid-template-columns: auto;
+    justify-items: center;
+    grid-gap: .75rem;
+  }
 }

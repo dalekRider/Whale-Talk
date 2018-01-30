@@ -9,14 +9,35 @@
   <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
-  <main>
-    <div class="translator__header">
-      <h1>Whale Speak Converter</h1>
-    </div>
-    <div class="translator__body">
-      <p>Have you ever wondered what it would sound like to speak whale? Probably not, but since your here! Why not give it a whirl? According to the internets the forumla works like this: remove all consonants leaving only the vowels, then double up the e's and u's. This app does just that. Click the button below and try it out. Don't forget to check back for updates.</p>
-      <button class="btn" id="translateBtn">Start</button>
-    </div>
+  <main role="main">
+    <section class="translator">
+      <div class="translator__header">
+        <h1>Whale Speak Converter</h1>
+      </div>
+      <div class="translator__body">
+        <h2>Let's Talk!</h2>
+        <p>Have you ever wondered what it would sound like to speak whale? This app will translate your text to "whale speak". Type the word or phrase you want translate and click the submit button or hit the enter key on your computer and presto (or 'EEO').</p>
+        <div class="translator__form">  
+          <input type="text" name="trans-input" placeholder="Enter Your Text Here" class="js-trans__input"> 
+          <input type="submit" class="btn js-trans-btn" value="Submit">
+        </div>
+        <div class="translator__results js-translator__results">
+          <p></p>  
+        </div>
+      </div>
+      <aside class="translator__faq">
+        <h2>How it Works</h2>
+        <p>To translate any word to "Whale-ese" simply remove all the consonants. ONce you are left with only vowels, double any letter e's and u's. That's it.</p>
+        <p>This app started as a simple javascript project for one of <a href="https://www.codecademy.com/learn/introduction-to-javascript">Codecademy's</a> JavaScript projects. I've simply built on that idea and created this app using plain JavaScript, basic HTML and CSS.</p>
+        <p>The app listens for two events, click and keydown. The keydown event specifically listens for the "enter" key to be pressed. If either event occurs, the program checks the text input for a value and returns a result based on three conditions: Empty: asks for a word, No Vowels: returns no vowel message, and Proper Value: proceeds with the program. If the proper value is in the text input the app iterates through each letter and compares it with an array of vowels. If a letter matches a letter from the vowels array it will be stored in a new array. Should the letter that matches be an 'e' or an 'u' that letter is stored again creating a double. Once it is completed the results are added to the translator__results div using the innerHTML method and the text input is cleared and ready for another round.</p>
+
+      </aside>
+    </section>
+    <footer>
+      <p><a href="https://github.com/dalekRider/Whale-Talk" target="_blank">Whale Talk</a></p>
+      <p><a href="https://www.linkedin.com/in/johnathan-mercier-509826111/" target="_blank">Johnathan Mercier</a></p>
+      <p><a href="http://www.twofistedmedia.com" target="_blank">Twofistedmedia</a></p> 
+    </footer>
   </main>
   <script src="whaleTalk.js"></script>
 </body>
