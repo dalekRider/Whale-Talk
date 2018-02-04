@@ -112,6 +112,7 @@ main {
 .translator__faq {
   grid-area: aside;
   margin-bottom: 2.5rem;
+  line-height: 1.3;
 }
 
 .translator__faq p {
@@ -127,7 +128,9 @@ footer {
   font-size: 0.85rem;
   font-weight: bold;
   color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.065rem;
 }
+
 
 /* Components */
 
@@ -160,6 +163,7 @@ footer {
   font-size: 18px;
   font-weight: bold;
   width: 350px;
+  outline: none;
 }
 
 
